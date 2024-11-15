@@ -1,3 +1,0 @@
-/home/Suryansh/MyPrograms/C/IterativeMethods/cmake-build-debug/CMakeFiles/IterativeMethods.dir
-/home/Suryansh/MyPrograms/C/IterativeMethods/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/Suryansh/MyPrograms/C/IterativeMethods/cmake-build-debug/CMakeFiles/rebuild_cache.dir
