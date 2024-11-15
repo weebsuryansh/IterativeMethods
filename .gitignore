@@ -1,3 +1,4 @@
 Eigen
 cmake-build-debug
 .idea
+.gitignore
