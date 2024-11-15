@@ -35,7 +35,7 @@ public:
 
     MatrixXd solver() {
         if (_matrix_A.diagonal().array().abs().minCoeff() < std::numeric_limits<double>::epsilon()) {
-            throw std::runtime_error("Matrix A has zero diagonal elements; Jacobi may fail.");
+            throw std::runtime_error("Matrix A has zero diagonal elements; Gauss-Seidel may fail.");
         }
         int iteration=0;
         MatrixXd _vector_X_next= _vector_X.eval();
