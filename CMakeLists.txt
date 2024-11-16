@@ -7,4 +7,5 @@ add_executable(IterativeMethods
         main.cpp
         jacobi.cpp
         gauss_seidel.cpp
+        conjugate_gradient.cpp
 )

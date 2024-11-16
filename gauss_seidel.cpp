@@ -51,7 +51,7 @@ public:
                 }
                 _vector_X_next(i,0) = (_vector_b(i,0)-sum)/_matrix_A(i,i);
             }
-            _vector_r=_vector_X_next-_vector_X;
+            _vector_r = _vector_b - (_matrix_A*_vector_X_next);
             _vector_X = _vector_X_next;
             cout<<"Iteration "<<iteration<<endl;
             cout<<_vector_X.transpose()<<endl;

@@ -19,12 +19,24 @@ int main() {
 
     // 10^-8
     constexpr double epsilon = 0.00000001;
+    int choice;
 
-   // Jacobi jacobi_solver (matrix_A, vector_b, 4, 4, epsilon);
-   // vector_x = jacobi_solver.solve();
+    cout<<"Choose methos:\n1. Jacobi\n2. Gauss-Seidel\nEnter choice:"<<endl;
 
-    GaussSeidel gauss_seidel_solver (matrix_A, vector_b, 4, 4, epsilon);
-    vector_x = gauss_seidel_solver.solve();
+    cin>>choice;
+    getline(cin,input);
+
+    if (choice == 1) {
+        Jacobi jacobi_solver (matrix_A, vector_b, 4, 4, epsilon);
+        vector_x = jacobi_solver.solve();
+    }
+    else if (choice == 2) {
+        GaussSeidel gauss_seidel_solver (matrix_A, vector_b, 4, 4, epsilon);
+        vector_x = gauss_seidel_solver.solve();
+    }
+    else {
+        cout<<"Wrong choice!"<<endl;
+    }
 
     cout<<"Print the result?"<<endl;
     getline(cin, input);
