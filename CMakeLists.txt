@@ -8,4 +8,5 @@ add_executable(IterativeMethods
         jacobi.cpp
         gauss_seidel.cpp
         conjugate_gradient.cpp
+        gmres.cpp
 )

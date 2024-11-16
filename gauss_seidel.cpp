@@ -38,7 +38,6 @@ public:
             throw std::runtime_error("Matrix A has zero diagonal elements; Gauss-Seidel may fail.");
         }
         int iteration=0;
-        MatrixXd _vector_X_next= _vector_X.eval();
         MatrixXd _vector_r;
         do {
             iteration++;
@@ -46,13 +45,12 @@ public:
                 double sum=0;
                 for (int j = 0; j < _dimensions.second; j++) {
                     if (j != i) {
-                        sum+=(_matrix_A(i,j)*_vector_X_next(j,0));
+                        sum+=(_matrix_A(i,j)*_vector_X(j,0));
                     }
                 }
-                _vector_X_next(i,0) = (_vector_b(i,0)-sum)/_matrix_A(i,i);
+                _vector_X(i,0) = (_vector_b(i,0)-sum)/_matrix_A(i,i);
             }
-            _vector_r = _vector_b - (_matrix_A*_vector_X_next);
-            _vector_X = _vector_X_next;
+            _vector_r = _vector_b - (_matrix_A*_vector_X);
         } while(twoNorm(_vector_r)>_epsilon);
 
         cout <<"The solver took "<<iteration <<" iterations to complete."<< endl;
