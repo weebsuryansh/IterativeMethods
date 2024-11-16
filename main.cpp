@@ -2,6 +2,7 @@
 #include "Eigen/Dense"
 #include "jacobi.cpp"
 #include "gauss_seidel.cpp"
+#include "conjugate_gradient.cpp"
 
 using namespace std;
 using namespace Eigen;
@@ -21,7 +22,7 @@ int main() {
     constexpr double epsilon = 0.00000001;
     int choice;
 
-    cout<<"Choose methos:\n1. Jacobi\n2. Gauss-Seidel\nEnter choice:"<<endl;
+    cout<<"Choose methos:\n1. Jacobi\n2. Gauss-Seidel\n3. Conjugate Gradient\nEnter choice:"<<endl;
 
     cin>>choice;
     getline(cin,input);
@@ -33,6 +34,10 @@ int main() {
     else if (choice == 2) {
         GaussSeidel gauss_seidel_solver (matrix_A, vector_b, 4, 4, epsilon);
         vector_x = gauss_seidel_solver.solve();
+    }
+    else if (choice == 3) {
+        ConjugateGradient conjugate_gradient_solver (matrix_A, vector_b, 4, 4, epsilon);
+        vector_x = conjugate_gradient_solver.solve();
     }
     else {
         cout<<"Wrong choice!"<<endl;
