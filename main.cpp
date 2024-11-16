@@ -21,10 +21,10 @@ int main() {
     constexpr double epsilon = 0.00000001;
 
    // Jacobi jacobi_solver (matrix_A, vector_b, 4, 4, epsilon);
-   // vector_x = jacobi_solver.solver();
+   // vector_x = jacobi_solver.solve();
 
     GaussSeidel gauss_seidel_solver (matrix_A, vector_b, 4, 4, epsilon);
-    vector_x = gauss_seidel_solver.solver();
+    vector_x = gauss_seidel_solver.solve();
 
     cout<<"Print the result?"<<endl;
     getline(cin, input);
