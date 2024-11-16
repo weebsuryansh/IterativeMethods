@@ -53,8 +53,6 @@ public:
             }
             _vector_r = _vector_b - (_matrix_A*_vector_X_next);
             _vector_X = _vector_X_next;
-            cout<<"Iteration "<<iteration<<endl;
-            cout<<_vector_X.transpose()<<endl;
         } while(twoNorm(_vector_r)>_epsilon);
 
         cout <<"The solver took "<<iteration <<" iterations to complete."<< endl;
