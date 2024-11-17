@@ -27,7 +27,7 @@ public:
     }
     double twoNorm(MatrixXd _vector) {
         double sum=0;
-        for (int i = 0; i < _dimensions.second; i++) {
+        for (int i = 0; i < _vector.rows(); i++) {
             sum+=_vector(i,0)*_vector(i,0);
         }
         return sqrt(sum);
