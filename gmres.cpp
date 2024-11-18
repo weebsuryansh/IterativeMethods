@@ -122,7 +122,6 @@ public:
             _vector_X = _vector_X + _matrix_V.leftCols(_max_iter)*_vector_y;
             _vector_r = _vector_b - _matrix_A*_vector_X;
             r_mod = _vector_r.norm();
-
             if (_max_iter<_dimensions.second) {
                 _max_iter++;
             }
