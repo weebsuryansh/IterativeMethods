@@ -128,7 +128,6 @@ public:
             }
             cout<<iter<<" "<<r_mod<<endl;
         }while (r_mod > _epsilon);
-
         cout <<"The solver took "<<iter <<" iterations to complete."<< endl;
         return _vector_X;
     }
