@@ -45,7 +45,7 @@ int main() {
     vector_b = matrix_A * vector_x_true;
 
     int choice;
-    constexpr double epsilon = 1e-5;
+    constexpr double epsilon = 1e-8;
     if ((matrix_A-matrix_A.transpose()).norm()>epsilon) {
         cout<<"This matrix ain't symmetric"<<endl;
     }
