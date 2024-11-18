@@ -86,7 +86,7 @@ public:
         do {
             iter++;
             _vector_V_current = _vector_r / r_mod;
-            _matrix_V.setZero();
+            _matrix_V = MatrixXd::Zero(_dimensions.second, _max_iter+1);
             _matrix_V.col(0) = _vector_V_current;
             _matrix_H = MatrixXd::Zero(_max_iter+1,_max_iter);
 
@@ -122,6 +122,10 @@ public:
             _vector_X = _vector_X + _matrix_V.leftCols(_max_iter)*_vector_y;
             _vector_r = _vector_b - _matrix_A*_vector_X;
             r_mod = _vector_r.norm();
+
+            if (_max_iter<_dimensions.second) {
+                _max_iter++;
+            }
             cout<<iter<<" "<<r_mod<<endl;
         }while (r_mod > _epsilon);
 
