@@ -69,7 +69,7 @@ Result and analysis can be found in `Iterative_Methods.pdf`.
 ## Project Structure
 
 ```
-project_root/ 
+IterativeMethods/ 
 ├── CMakeLists.txt          # Build configuration
 ├── Eigen/                  # Library used for basic matrix operations 
 ├── data/                   # Example input files (matrices and vectors) 
