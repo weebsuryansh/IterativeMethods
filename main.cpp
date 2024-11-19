@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <chrono>
 #include "Eigen/Dense"
 #include "jacobi.cpp"
 #include "gauss_seidel.cpp"
@@ -78,24 +79,41 @@ int main() {
 
     if (choice == 1) {
         Jacobi jacobi_solver (matrix_A, vector_b, num_rows, num_cols, epsilon);
+        auto start = chrono::high_resolution_clock::now();
         vector_x = jacobi_solver.solve();
+        auto end = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(end-start);
+        cout<<"The iterator took "<<duration.count()<<" microseconds to execute."<<endl;
     }
     else if (choice == 2) {
         GaussSeidel gauss_seidel_solver (matrix_A, vector_b, num_rows, num_cols, epsilon);
+        auto start = chrono::high_resolution_clock::now();
         vector_x = gauss_seidel_solver.solve();
+        auto end = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(end-start);
+        cout<<"The iterator took "<<duration.count()<<" microseconds to execute."<<endl;
     }
     else if (choice == 3) {
         ConjugateGradient conjugate_gradient_solver (matrix_A, vector_b, num_rows, num_cols, epsilon);
+        auto start = chrono::high_resolution_clock::now();
         vector_x = conjugate_gradient_solver.solve();
+        auto end = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(end-start);
+        cout<<"The iterator took "<<duration.count()<<" microseconds to execute."<<endl;
     }
     else if (choice == 4) {
         GMRES gmres_solver(matrix_A, vector_b, num_rows, num_cols, epsilon,num_cols);
+        auto start = chrono::high_resolution_clock::now();
         vector_x =gmres_solver.solve();
+        auto end = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::microseconds>(end-start);
+        cout<<"The iterator took "<<duration.count()<<" microseconds to execute."<<endl;
     }
     else {
         cout<<"Wrong choice!"<<endl;
         exit(0);
     }
+
 
     cout<<"Print the result?"<<endl;
     getline(cin, input);
