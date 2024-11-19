@@ -46,7 +46,6 @@ public:
         MatrixXd Q_transpose = MatrixXd::Identity(rows,rows);
         MatrixXd R = A.eval();
 
-
         for (long i = 0; i < cols; i++) {
             long const j = i + 1;
             if(R(j,i)==0) {
