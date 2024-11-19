@@ -63,6 +63,7 @@ int main() {
 
     vector_x_true = VectorXd::Zero(num_cols);
     vector_x_true.setRandom();
+    vector_x_true *= 10;
     vector_x_true+=50*VectorXd::Ones(num_cols);
     vector_b = matrix_A * vector_x_true;
 
