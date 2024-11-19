@@ -71,6 +71,7 @@ int main() {
         cout<<"This matrix ain't symmetric"<<endl;
     }
 
+    cout<<"True x:"<<endl;
     cout<<vector_x_true<<endl;
 
     cout<<"Choose method:\n1. Jacobi\n2. Gauss-Seidel\n3. Conjugate Gradient\n4. GMRES\nEnter choice:"<<endl;
