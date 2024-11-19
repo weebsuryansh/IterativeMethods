@@ -53,12 +53,18 @@ make
 .\IterativeMethods
 ```
 
+---
+
 ## Input format
 The code uses 3x3, 4x4, 5x5 and 6x6 matrices that can be edited by going into the `\data` directory.
 The matrices used are in `.mtx` format.
 
+---
+
 ## Result and Analysis
 Result and analysis can be found in `Iterative_Methods.pdf`.
+
+---
 
 ## Project Structure
 
