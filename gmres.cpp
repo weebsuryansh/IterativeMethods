@@ -123,9 +123,9 @@ public:
             _vector_r = _vector_b - _matrix_A*_vector_X;
             r_mod = _vector_r.norm();
 
-            if (_max_iter<_dimensions.second) {
-                _max_iter++;
-            }
+           // if (_max_iter<_dimensions.second) {
+           //     _max_iter++;
+           // }
             cout<<iter<<" "<<r_mod<<endl;
         }while (r_mod > _epsilon);
         cout <<"The solver took "<<iter <<" iterations to complete."<< endl;
